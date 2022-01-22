@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<span id="pre">Z:</span>
+		<script>
+			window.addEventListener("devicemotion", function(e) {
+				var z = e.acceleration.z;
+				document.getElementById("pre").innerText = "Z:" + z;
+			}, false);
+		</script>
+	</body>
+</html>
