@@ -5,11 +5,18 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<span id="pre">Z:</span>
+		<span id="pre">Z:</span><br>
+		<label for="range">しきい値</label>
+		<input id="range" type="range" step="0.05" min="0" max="1.5">
 		<script>
 			window.addEventListener("devicemotion", function(e) {
 				var z = e.acceleration.z;
 				document.getElementById("pre").innerText = "Z:" + z;
+				
+				if(Math.abs(e.acceleration.z) > document.getElementById("range").value) {
+					var se = new Audio("se.mp3");
+					se.play();
+				}
 			}, false);
 		</script>
 	</body>
