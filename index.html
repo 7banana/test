@@ -9,14 +9,15 @@
 		<label for="th">しきい値</label>
 		<input id="th" type="range" step="0.05" min="0" max="1.5">
 		<script>
+			var se = new Audio("se.mp3");
+			
 			window.addEventListener("devicemotion", function(e) {
 				var z = e.acceleration.z;
 				var th = document.getElementById("th").value;
 				document.getElementById("pre").innerText = "Z:" + z;
 				
-				if(Math.abs(z) > th && lz > th) {
-					var lz = e.acceleration.z;
-					var se = new Audio("se.mp3");
+				if(Math.abs(z) > th && se.ended != false) {
+					// var lz = e.acceleration.z;
 					se.play();
 				}
 			}, false);
