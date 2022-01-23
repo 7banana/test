@@ -8,7 +8,7 @@
 		<span id="pre">Z:</span><br>
 		<label for="th">しきい値</label><br>
 		<input id="th" type="range" step="0.05" min="0" max="1.5">
-		<i>Ver.0.0.6</i>
+		<i>Ver.0.0.7</i>
 		<script>
 			var se = new Audio("se.mp3");
 			
@@ -17,7 +17,7 @@
 				var th = document.getElementById("th").value;
 				document.getElementById("pre").innerText = "Z:" + z;
 				
-				if(Math.abs(z) > th && se.ended) {
+				if(Math.abs(z) > th) {
 					// var lz = e.acceleration.z;
 					se.play();
 				}
