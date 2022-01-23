@@ -14,7 +14,7 @@
 				var th = document.getElementById("th").value;
 				document.getElementById("pre").innerText = "Z:" + z;
 				
-				if(Math.abs(z) > th && lz < th) {
+				if(Math.abs(z) > th && lz > th) {
 					var lz = e.acceleration.z;
 					var se = new Audio("se.mp3");
 					se.play();
