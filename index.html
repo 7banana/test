@@ -11,7 +11,7 @@
 		<script>
 			window.addEventListener("devicemotion", function(e) {
 				var z = e.acceleration.z;
-				var th = document.getElementById("range").value;
+				var th = document.getElementById("th").value;
 				document.getElementById("pre").innerText = "Z:" + z;
 				
 				if(Math.abs(z) > th && lz < th) {
